@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/game_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_pager_dimen_350"
+        android:layout_marginTop="@dimen/image_margin_top_70"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dot_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_margin_10"
+        app:dotsColor="@android:color/darker_gray"
+        app:dotsSize="@dimen/game_board_margin_16"
+        app:dotsSpacing="@dimen/button_corner_radius_6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_view_pager"
+        app:progressMode="true"
+        app:selectedDotColor="@color/black" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/start_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:paddingHorizontal="@dimen/dialog_button_padding_horizontal_40"
+        android:paddingVertical="@dimen/dialog_button_padding_vertical_20"
+        android:text="@string/set_theme"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dialog_desc_text_size_22"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/dialog_corner_radius_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dot_indicator" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

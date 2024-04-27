@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".view.fragment.GameFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dialog_button_margin_20"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dialog_title_text_size_30"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/score_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dialog_margin_10"
+                android:background="@drawable/def_score_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dialog_margin_10"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="center"
+                    android:minWidth="@dimen/score_min_width_65"
+                    android:text="@string/score"
+                    android:textColor="#101010"
+                    android:textSize="@dimen/dialog_desc_text_size_22"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/score_Game"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dialog_margin_10"
+                    android:layout_marginBottom="@dimen/dialog_margin_10"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="center"
+                    android:minWidth="@dimen/score_min_width_65"
+                    android:textColor="#FEFEFE"
+                    android:textSize="@dimen/dialog_desc_text_size_22"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/best_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/def_score_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dialog_margin_10"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="center"
+                    android:minWidth="@dimen/score_min_width_65"
+                    android:text="@string/best"
+                    android:textColor="#101010"
+                    android:textSize="@dimen/dialog_desc_text_size_22"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/record_game"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dialog_margin_10"
+                    android:layout_marginBottom="@dimen/dialog_margin_10"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="center"
+                    android:minWidth="@dimen/score_min_width_65"
+                    android:textColor="#FEFEFE"
+                    android:textSize="@dimen/dialog_desc_text_size_22"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end">
+
+        <ImageView
+            android:id="@+id/share_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/dialog_margin_10"
+            android:background="@drawable/def_score_bg"
+            android:contentDescription="@null"
+            android:padding="@dimen/restart_btn_margin_16"
+            android:scaleType="center"
+            android:src="@drawable/share_24" />
+
+        <ImageView
+            android:id="@+id/undo_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/dialog_margin_10"
+            android:background="@drawable/def_score_bg"
+            android:contentDescription="@null"
+            android:padding="@dimen/restart_btn_margin_16"
+            android:scaleType="center"
+            android:src="@drawable/undo_24" />
+
+        <ImageView
+            android:id="@+id/restart_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/dialog_button_margin_20"
+            android:background="@drawable/def_score_bg"
+            android:contentDescription="@null"
+            android:padding="@dimen/restart_btn_margin_16"
+            android:scaleType="center"
+            android:src="@drawable/sharp_cached_24" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/game_board"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/main_game_field"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/game_board_margin_16"
+            android:background="@drawable/def_color_board_bg"
+            android:orientation="vertical"
+            android:padding="@dimen/game_board_padding_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tile_line_height_0"
+                android:layout_weight="1">
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tile_line_height_0"
+                android:layout_weight="1">
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tile_line_height_0"
+                android:layout_weight="1">
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tile_line_height_0"
+                android:layout_weight="1">
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tile_line_height_0"
+                android:layout_weight="1">
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+                <TextView
+                    style="@style/PlayButton"
+                    android:textSize="@dimen/tile_text_size_big_28" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:padding="@dimen/dialog_padding_10"
+    app:cardCornerRadius="@dimen/dialog_corner_radius_10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/dialog_padding_10">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/game_over"
+            android:letterSpacing="0.05"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dialog_title_text_size_30"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dialog_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dialog_desc_margin_vertical"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/tv_win_dialog"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dialog_desc_text_size_22" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/negative_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dialog_button_margin_20"
+                android:layout_weight="1"
+                android:text="@string/play"
+                android:textColor="@color/splash_screen_white"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/button_corner_radius_6" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/positive_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dialog_button_margin_20"
+                android:layout_weight="1"
+                android:text="@string/restart"
+                android:textColor="@color/splash_screen_white"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/button_corner_radius_6" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

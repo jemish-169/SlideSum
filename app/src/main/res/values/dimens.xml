@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="dialog_margin_10">10dp</dimen>
+    <dimen name="dialog_padding_10">10dp</dimen>
+    <dimen name="dialog_corner_radius_10">10dp</dimen>
+    <dimen name="dialog_title_text_size_30">30sp</dimen>
+    <dimen name="dialog_desc_margin_vertical">16sp</dimen>
+    <dimen name="dialog_desc_text_size_22">22sp</dimen>
+    <dimen name="button_corner_radius_6">6dp</dimen>
+    <dimen name="dialog_button_margin_20">20dp</dimen>
+    <dimen name="app_name_margin_top_40">40dp</dimen>
+    <dimen name="game_board_margin_16">16dp</dimen>
+    <dimen name="game_board_padding_5">5dp</dimen>
+    <dimen name="tile_text_size_33">33sp</dimen>
+    <dimen name="tile_text_size_small_38">38sp</dimen>
+    <dimen name="tile_text_size_big_28">28sp</dimen>
+    <dimen name="tile_line_height_0">0dp</dimen>
+    <dimen name="score_min_width_65">65dp</dimen>
+    <dimen name="restart_btn_margin_16">16sp</dimen>
+    <dimen name="image_dimen_260">260dp</dimen>
+    <dimen name="view_pager_dimen_350">350dp</dimen>
+    <dimen name="image_margin_top_70">70dp</dimen>
+    <dimen name="dialog_button_padding_vertical_20">20dp</dimen>
+    <dimen name="dialog_button_padding_horizontal_40">40dp</dimen>
+    <dimen name="theme_button_padding_20">20dp</dimen>
+    <dimen name="theme_button_padding_10">10dp</dimen>
+    <dimen name="theme_button_text_size_16">16sp</dimen>
+    <dimen name="theme_button_radius_6">6dp</dimen>
+</resources>

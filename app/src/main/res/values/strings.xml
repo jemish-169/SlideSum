@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">SlideSum</string>
+    <string name="dialog_quit_game">Would you to like leave ?</string>
+    <string name="tv_win_dialog">It took you %1$s moves, would you like to restart the game?</string>
+    <string name="score">score</string>
+    <string name="best">best</string>
+    <string name="start_game">Start Game</string>
+    <string name="restart">Restart</string>
+    <string name="play">Play</string>
+    <string name="game_over">GAME OVER!</string>
+    <string name="rate_game">Rate Game</string>
+    <string name="share_game">Share Game</string>
+    <string name="about_game">About Game</string>
+    <string name="share_app_text">\"Hey! 🌟 Found this Game that\'s been helping to sharping mind.– check it out!\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="play_store_link">"https://play.google.com/store/apps/details?id=%1$s"</string>
+    <string name="exit_dialog_desc">"Are you sure you want to leave the game? Don't worry your game will be saved."</string>
+    <string name="exit_dialog_title">"LEAVE THE GAME?"</string>
+    <string name="restart_dialog_title">"RESTART GAME?"</string>
+    <string name="restart_dialog_desc">"Are you sure you want to Restart the game? Your progress will be lost."</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="classic_4x4">CLASSIC (4x4)</string>
+    <string name="small_3x3">SMALL (3x3)</string>
+    <string name="big_5x5">BIG (5x5)</string>
+    <string name="default_theme">DEFAULT THEME</string>
+    <string name="glass_theme">GLASS TILE</string>
+    <string name="pastel_color">PASTEL COLOR</string>
+    <string name="pink_monochrome">PINK MONOCHROME</string>
+    <string name="border_blue_ocean">BLUE OCEAN</string>
+    <string name="set_theme">Set Theme</string>
+    <string name="theme">Themes</string>
+    <string name="setting">Settings</string>
+</resources>

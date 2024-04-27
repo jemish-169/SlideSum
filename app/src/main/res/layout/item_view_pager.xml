@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/image_game_type"
+        android:layout_width="@dimen/image_dimen_260"
+        android:layout_height="@dimen/image_dimen_260"
+        android:contentDescription="@null"
+        tools:src="@drawable/theme_1" />
+
+    <TextView
+        android:id="@+id/game_type_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.05"
+        android:layout_marginVertical="@dimen/dialog_button_margin_20"
+        android:fontFamily="sans-serif-smallcaps"
+        tools:text="@string/classic_4x4"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dialog_desc_text_size_22"
+        android:textStyle="bold" />
+</LinearLayout>

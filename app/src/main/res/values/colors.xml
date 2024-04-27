@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#101010</color>
+    <color name="white">#EFEFEF</color>
+    <color name="splash_screen_white">#FEFEFE</color>
+
+    <!--    Game board color Theme 1-->
+    <color name="def_score_color_pressed">#9C9186</color>
+    <color name="def_score_color">#baac9f</color>
+    <color name="def_text_color_2_4_64">#766962</color>
+    <color name="def_text_color_else">#F9F4F3</color>
+    <color name="def_bg_color_board">#b9aea2</color>
+    <color name="def_bg_color_0">#d9ccc5</color>
+    <color name="def_bg_color_2">#f0e4dc</color>
+    <color name="def_bg_color_4">#eddfcb</color>
+    <color name="def_bg_color_8">#f69564</color>
+    <color name="def_bg_color_16">#f77b61</color>
+    <color name="def_bg_color_32">#F55D3C</color>
+    <color name="def_bg_color_64">#eecd74</color>
+    <color name="def_bg_color_128">#D9AD2B</color>
+    <color name="def_bg_color_256">#F2B230</color>
+    <color name="def_bg_color_512">#FBB21D</color>
+    <color name="def_bg_color_1024">#F27130</color>
+    <color name="def_bg_color_2048">#CC142B</color>
+    <color name="def_bg_color_else">#6E020F</color>
+
+    <!--    Game board color Theme 2-->
+    <color name="glass_score_color">#2787B1</color>
+    <color name="glass_score_color_pressed">#1A5975</color>
+    <color name="glass_text_color_2_4_64">#FFFFFF</color>
+    <color name="glass_text_color_else">#FFFFFF</color>
+    <color name="glass_bg_color_board">#063c54</color>
+    <color name="glass_bg_color_0">#357285</color>
+    <color name="glass_bg_color_2">#e8c767</color>
+    <color name="glass_bg_color_4">#f4ae1a</color>
+    <color name="glass_bg_color_8">#ec7c64</color>
+    <color name="glass_bg_color_16">#F08080</color>
+    <color name="glass_bg_color_32">#cd4a2f</color>
+    <color name="glass_bg_color_64">#5BB88B</color>
+    <color name="glass_bg_color_128">#28604E</color>
+    <color name="glass_bg_color_256">#15928e</color>
+    <color name="glass_bg_color_512">#5C9CD4</color>
+    <color name="glass_bg_color_1024">#A46ED8</color>
+    <color name="glass_bg_color_2048">#D94E85</color>
+    <color name="glass_bg_color_else">#6E020F</color>
+
+    <!--    Game board color Theme 3-->
+    <color name="pastel_score_color">#AA82E6</color>
+    <color name="pastel_score_color_pressed">#8666B5</color>
+    <color name="pastel_text_color_2_4_64">#000000</color>
+    <color name="pastel_text_color_else">#000000</color>
+    <color name="pastel_bg_color_board">#6D5B8E</color>
+    <color name="pastel_bg_color_0">#DACBF1</color>
+    <color name="pastel_bg_color_2">#ffcfd2</color>
+    <color name="pastel_bg_color_4">#f1c0e8</color>
+    <color name="pastel_bg_color_8">#cfbaf0</color>
+    <color name="pastel_bg_color_16">#a3c4f3</color>
+    <color name="pastel_bg_color_32">#90dbf4</color>
+    <color name="pastel_bg_color_64">#8eecf5</color>
+    <color name="pastel_bg_color_128">#98f5e1</color>
+    <color name="pastel_bg_color_256">#b9fbc0</color>
+    <color name="pastel_bg_color_512">#ffb3c6</color>
+    <color name="pastel_bg_color_1024">#ff8fab</color>
+    <color name="pastel_bg_color_2048">#fb6f92</color>
+    <color name="pastel_bg_color_else">#6E020F</color>
+
+    <!--    Game board color Theme 4-->
+    <color name="pink_score_color">#fb6f92</color>
+    <color name="pink_score_color_pressed">#CD5B78</color>
+    <color name="pink_text_color_2_4_64">#fb6f92</color>
+    <color name="pink_text_color_else">#fb6f92</color>
+    <color name="pink_bg_color_board">#101010</color>
+    <color name="pink_bg_color">#EFEFEF</color>
+
+    <!--    Game board color Theme 5-->
+    <color name="border_score_color">#2787B1</color>
+    <color name="border_score_color_pressed">#1A5975</color>
+    <color name="border_text_color_2_4_64">#000000</color>
+    <color name="border_text_color_else">#000000</color>
+    <color name="border_bg_color_board">#EFEFEF</color>
+    <color name="border_bg_color_0">#4cc9f0</color>
+    <color name="border_bg_color_2">#4895ef</color>
+    <color name="border_bg_color_4">#4361ee</color>
+    <color name="border_bg_color_8">#3f37c9</color>
+    <color name="border_bg_color_16">#3a0ca3</color>
+    <color name="border_bg_color_32">#480ca8</color>
+    <color name="border_bg_color_64">#560bad</color>
+    <color name="border_bg_color_128">#7209b7</color>
+    <color name="border_bg_color_256">#b5179e</color>
+    <color name="border_bg_color_512">#c9184a</color>
+    <color name="border_bg_color_1024">#a4133c</color>
+    <color name="border_bg_color_2048">#800f2f</color>
+    <color name="border_bg_color_else">#590d22</color>
+
+</resources>
