@@ -6,6 +6,7 @@ class GameRepository {
     private var matrix = LocalData.getMatrix()
     private var score = LocalData.getScore()
     private var record = LocalData.getRecord()
+    private var moves = LocalData.getMoves()
     private var initValue = 2
     private var oldMatrix = arrayOf(
         arrayOf(0, 0, 0, 0),
@@ -18,6 +19,7 @@ class GameRepository {
     private var undoMatrix = LocalData.getMatrixUndo()
     private var oldScore = LocalData.getScoreUndo()
     private var oldRecord = LocalData.getRecordUndo()
+    private var oldMoves = LocalData.getMovesUndo()
 
     init {
         reInitializeAnimation()
@@ -56,6 +58,8 @@ class GameRepository {
     fun moveLeft() {
         oldScore = score
         oldRecord = record
+        oldMoves = moves
+        moves++
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
                 oldMatrix[i][j] = matrix[i][j]
@@ -97,6 +101,8 @@ class GameRepository {
     fun moveRight() {
         oldScore = score
         oldRecord = record
+        oldMoves = moves
+        moves++
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
                 oldMatrix[i][j] = matrix[i][j]
@@ -138,6 +144,8 @@ class GameRepository {
     fun moveUp() {
         oldScore = score
         oldRecord = record
+        oldMoves = moves
+        moves++
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
                 oldMatrix[i][j] = matrix[i][j]
@@ -179,6 +187,8 @@ class GameRepository {
     fun moveDown() {
         oldScore = score
         oldRecord = record
+        oldMoves = moves
+        moves++
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
                 oldMatrix[i][j] = matrix[i][j]
@@ -243,10 +253,12 @@ class GameRepository {
             LocalData.setRecord(record)
         LocalData.setScore(score)
         LocalData.setMatrix(matrix)
+        LocalData.setMoves(moves)
 
         LocalData.setMatrixUndo(undoMatrix)
         LocalData.setScoreUndo(oldScore)
         LocalData.setRecordUndo(oldRecord)
+        LocalData.setMovesUndo(oldMoves)
     }
 
     fun restart() {
@@ -262,6 +274,8 @@ class GameRepository {
         copyToUndoMatrix()
         oldScore = 0
         oldRecord = record
+        moves = 0
+        oldMoves = 0
     }
 
     fun undoBoard() {
@@ -272,6 +286,7 @@ class GameRepository {
         }
         score = oldScore
         record = oldRecord
+        moves = oldMoves
     }
 
     private fun copyFromOldMatrix() {
@@ -295,11 +310,43 @@ class GameRepository {
 
     }
 
-    fun setTheme(theme: Int) {
-        LocalData.setTheme(theme)
-    }
-
     fun getTheme(): Int {
         return LocalData.getTheme()
+    }
+
+    fun getMoves(): Int {
+        return moves
+    }
+
+    fun useHammer() :Boolean{
+        val elements = ArrayList<Pair<Int, Int>>()
+        for (i in matrix.indices) {
+            for (j in 0 until matrix[i].size) {
+                if (matrix[i][j] == 2 ||
+                    matrix[i][j] == 4 ||
+                    matrix[i][j] == 8 ||
+                    matrix[i][j] == 16 ||
+                    matrix[i][j] == 32 ||
+                    matrix[i][j] == 64
+                ) elements.add(
+                    Pair(i, j)
+                )
+            }
+        }
+        elements.shuffle()
+
+        if(elements.size < 4) return false
+
+        for (i in matrix.indices) {
+            for (j in 0 until matrix[i].size) {
+                oldMatrix[i][j] = matrix[i][j]
+            }
+        }
+
+        val element1 = elements[0]
+        matrix[element1.first][element1.second] = 0
+
+        copyFromOldMatrix()
+        return true
     }
 }

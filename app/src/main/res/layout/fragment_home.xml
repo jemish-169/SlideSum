@@ -1,19 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/dialog_margin_10"
+        android:layout_marginTop="@dimen/dialog_margin_10"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/small_high_score_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/high_score_bg"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dialog_margin_10"
+            android:paddingVertical="@dimen/game_board_padding_5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:text="@string/small_3x3"
+                android:textColor="@color/dark_red"
+                android:textSize="@dimen/high_score_14sp" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/dialog_margin_10"
+                android:background="@color/dark_red" />
+
+            <TextView
+                android:id="@+id/small_high_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:textColor="@color/dark_red"
+                android:textSize="@dimen/theme_button_text_size_16"
+                tools:text="1500" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/medium_high_score_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginVertical="@dimen/game_board_padding_5"
+            android:background="@drawable/high_score_bg"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dialog_margin_10"
+            android:paddingVertical="@dimen/game_board_padding_5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:text="@string/classic_4x4"
+                android:textColor="@color/dark_yellow"
+                android:textSize="@dimen/high_score_14sp" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/dialog_margin_10"
+                android:background="@color/dark_yellow" />
+
+            <TextView
+                android:id="@+id/medium_high_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:textColor="@color/dark_yellow"
+                android:textSize="@dimen/theme_button_text_size_16"
+                tools:text="1500" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/big_high_score_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/high_score_bg"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dialog_margin_10"
+            android:paddingVertical="@dimen/game_board_padding_5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:text="@string/big_5x5"
+                android:textColor="@color/dark_green"
+                android:textSize="@dimen/high_score_14sp" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/dialog_margin_10"
+                android:background="@color/dark_green" />
+
+            <TextView
+                android:id="@+id/big_high_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:textColor="@color/dark_green"
+                android:textSize="@dimen/theme_button_text_size_16"
+                tools:text="1500" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/game_view_pager"
         android:layout_width="match_parent"
         android:layout_height="@dimen/view_pager_dimen_350"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/dialog_title_text_size_30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
         android:id="@+id/dot_indicator"

@@ -6,6 +6,7 @@ class BigGameRepository {
     private var matrix = LocalData.getBigMatrix()
     private var score = LocalData.getBigScore()
     private var record = LocalData.getBigRecord()
+    private var moves = LocalData.getBigMoves()
     private var initValue = 2
     private var oldMatrix = arrayOf(
         arrayOf(0, 0, 0, 0, 0),
@@ -19,6 +20,7 @@ class BigGameRepository {
     private var undoMatrix = LocalData.getBigMatrixUndo()
     private var oldScore = LocalData.getBigScoreUndo()
     private var oldRecord = LocalData.getBigRecordUndo()
+    private var oldMoves= LocalData.getBigMovesUndo()
 
     init {
         reInitializeAnimation()
@@ -57,6 +59,8 @@ class BigGameRepository {
     fun moveLeft() {
         oldScore = score
         oldRecord = record
+        oldMoves = moves
+        moves++
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
                 oldMatrix[i][j] = matrix[i][j]
@@ -98,6 +102,8 @@ class BigGameRepository {
     fun moveRight() {
         oldScore = score
         oldRecord = record
+        oldMoves = moves
+        moves++
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
                 oldMatrix[i][j] = matrix[i][j]
@@ -139,6 +145,8 @@ class BigGameRepository {
     fun moveUp() {
         oldScore = score
         oldRecord = record
+        oldMoves = moves
+        moves++
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
                 oldMatrix[i][j] = matrix[i][j]
@@ -180,6 +188,8 @@ class BigGameRepository {
     fun moveDown() {
         oldScore = score
         oldRecord = record
+        oldMoves = moves
+        moves++
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
                 oldMatrix[i][j] = matrix[i][j]
@@ -244,10 +254,12 @@ class BigGameRepository {
             LocalData.setBigRecord(record)
         LocalData.setBigScore(score)
         LocalData.setBigMatrix(matrix)
+        LocalData.setBigMoves(moves)
 
         LocalData.setBigMatrixUndo(undoMatrix)
         LocalData.setBigScoreUndo(oldScore)
         LocalData.setBigRecordUndo(oldRecord)
+        LocalData.setBigMovesUndo(oldMoves)
     }
 
     fun restart() {
@@ -264,6 +276,8 @@ class BigGameRepository {
         copyToUndoMatrix()
         oldScore = 0
         oldRecord = record
+        moves = 0
+        oldMoves = 0
     }
 
     fun undoBoard() {
@@ -274,6 +288,7 @@ class BigGameRepository {
         }
         score = oldScore
         record = oldRecord
+        moves = oldMoves
     }
 
     private fun copyFromOldMatrix() {
@@ -297,11 +312,44 @@ class BigGameRepository {
 
     }
 
-    fun setTheme(theme: Int) {
-        LocalData.setTheme(theme)
-    }
-
     fun getTheme(): Int {
         return LocalData.getTheme()
     }
+
+    fun getMoves(): Int {
+        return moves
+    }
+
+    fun useHammer() :Boolean{
+        val elements = ArrayList<Pair<Int, Int>>()
+        for (i in matrix.indices) {
+            for (j in 0 until matrix[i].size) {
+                if (matrix[i][j] == 2 ||
+                    matrix[i][j] == 4 ||
+                    matrix[i][j] == 8 ||
+                    matrix[i][j] == 16 ||
+                    matrix[i][j] == 32 ||
+                    matrix[i][j] == 64
+                ) elements.add(
+                    Pair(i, j)
+                )
+            }
+        }
+        elements.shuffle()
+
+        if(elements.size < 5) return false
+
+        for (i in matrix.indices) {
+            for (j in 0 until matrix[i].size) {
+                oldMatrix[i][j] = matrix[i][j]
+            }
+        }
+
+        val element1 = elements[0]
+        matrix[element1.first][element1.second] = 0
+
+        copyFromOldMatrix()
+        return true
+    }
+
 }

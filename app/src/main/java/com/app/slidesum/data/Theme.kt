@@ -3,7 +3,6 @@ package com.app.slidesum.data
 import android.graphics.drawable.GradientDrawable
 
 data class Theme(
-    val textColor24: Int,
     val textColorElse: Int,
     val scoreBg: Int,
     val boardDrawable: Int,

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -19,7 +20,7 @@
             android:fontFamily="sans-serif-smallcaps"
             android:text="@string/app_name"
             android:textColor="@color/black"
-            android:textSize="@dimen/dialog_title_text_size_30"
+            android:textSize="@dimen/app_name_text_size_40"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -134,12 +135,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginEnd="@dimen/dialog_button_margin_20"
+            android:layout_marginEnd="@dimen/dialog_margin_10"
             android:background="@drawable/def_score_bg"
             android:contentDescription="@null"
             android:padding="@dimen/restart_btn_margin_16"
             android:scaleType="center"
             android:src="@drawable/sharp_cached_24" />
+
+        <ImageView
+            android:id="@+id/hammer_game"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/dialog_margin_10"
+            android:background="@drawable/def_score_bg"
+            android:contentDescription="@null"
+            android:padding="@dimen/game_board_padding_5"
+            android:src="@drawable/hammer" />
 
     </LinearLayout>
 
@@ -147,6 +159,31 @@
         android:id="@+id/game_board"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/game_board_padding_5"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@string/moves"
+            android:textColor="#101010"
+            android:textSize="@dimen/theme_button_text_size_16"
+            app:layout_constraintBottom_toTopOf="@+id/main_game_field"
+            app:layout_constraintEnd_toStartOf="@+id/moves_game" />
+
+        <TextView
+            android:id="@+id/moves_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/game_board_padding_5"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:textColor="#101010"
+            android:textSize="@dimen/theme_button_text_size_16"
+            app:layout_constraintBottom_toTopOf="@+id/main_game_field"
+            app:layout_constraintEnd_toEndOf="@+id/main_game_field"
+            tools:text="10" />
 
         <LinearLayout
             android:id="@+id/main_game_field"
@@ -223,5 +260,19 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/pop_up_animation_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/main_game_field"
+            app:layout_constraintEnd_toEndOf="@id/main_game_field"
+            app:layout_constraintStart_toStartOf="@id/main_game_field"
+            app:layout_constraintTop_toTopOf="@id/main_game_field"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/hammer_anim" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

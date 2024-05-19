@@ -2,7 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true">
         <shape>
-            <solid android:color="@color/glass_score_color_pressed"/>
+            <solid android:color="@color/bubble_score_color_pressed"/>
             <corners android:radius="10dp"/>
 
         </shape>
@@ -10,7 +10,7 @@
     <item android:state_pressed="false">
         <shape>
 
-            <solid android:color="@color/glass_score_color"/>
+            <solid android:color="@color/bubble_score_color"/>
             <corners android:radius="10dp"/>
 
         </shape>

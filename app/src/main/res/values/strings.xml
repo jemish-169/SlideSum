@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SlideSum</string>
+    <string name="app_name">2048++</string>
     <string name="dialog_quit_game">Would you to like leave ?</string>
     <string name="tv_win_dialog">It took you %1$s moves, would you like to restart the game?</string>
     <string name="score">score</string>
@@ -27,7 +27,9 @@
     <string name="pastel_color">PASTEL COLOR</string>
     <string name="pink_monochrome">PINK MONOCHROME</string>
     <string name="border_blue_ocean">BLUE OCEAN</string>
+    <string name="bubble_theme">BUBBLES</string>
     <string name="set_theme">Set Theme</string>
     <string name="theme">Themes</string>
     <string name="setting">Settings</string>
+    <string name="moves">Moves :</string>
 </resources>

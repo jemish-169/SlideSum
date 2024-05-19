@@ -8,13 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.app.slidesum.adapters.ViewPagerAdapter
 import com.app.slidesum.databinding.FragmentThemeBinding
-import com.app.slidesum.presenter.ThemePresenter
-import com.app.slidesum.repository.GameRepository
+import com.app.slidesum.localdata.LocalData
 
 class ThemeFragment : Fragment() {
 
     private lateinit var binding: FragmentThemeBinding
-    private val presenter = ThemePresenter(this, GameRepository())
+    private val localData = LocalData
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -26,12 +25,12 @@ class ThemeFragment : Fragment() {
 
     private fun loadViews() {
         binding.startGame.setOnClickListener {
-            presenter.setTheme(binding.gameViewPager.currentItem + 1)
+            localData.setTheme(binding.gameViewPager.currentItem + 1)
             findNavController().navigateUp()
         }
         val adapter = ViewPagerAdapter(requireContext(), 1)
         binding.gameViewPager.adapter = adapter
         binding.dotIndicator.attachTo(binding.gameViewPager)
-        binding.gameViewPager.currentItem = presenter.getTheme() - 1
+        binding.gameViewPager.currentItem = localData.getTheme() - 1
     }
 }

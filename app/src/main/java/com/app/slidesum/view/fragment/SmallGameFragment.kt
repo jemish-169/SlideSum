@@ -27,14 +27,15 @@ import com.app.slidesum.databinding.FinishDialogBinding
 import com.app.slidesum.databinding.FragmentSmallGameBinding
 import com.app.slidesum.presenter.SmallGamePresenter
 import com.app.slidesum.repository.SmallGameRepository
-import com.app.slidesum.utils.CollapseAnimation
-import com.app.slidesum.utils.Constants
+import com.app.slidesum.utils.Animation
+import com.app.slidesum.utils.Animation.animateValues
 import com.app.slidesum.utils.Constants.Companion.EXIT
 import com.app.slidesum.utils.Constants.Companion.GAME_OVER
 import com.app.slidesum.utils.Constants.Companion.RESTART
 import com.app.slidesum.utils.Constants.Companion.SMALL_INITIAL_CAPACITY
 import com.app.slidesum.utils.Constants.Companion.getGameTheme
 import com.app.slidesum.utils.MovementDetector
+import com.app.slidesum.view.animationView.PopUpAnimation
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -45,6 +46,7 @@ class SmallGameFragment : Fragment() {
     private val buttons: ArrayList<TextView> = ArrayList(SMALL_INITIAL_CAPACITY)
     private val presenter = SmallGamePresenter(this, SmallGameRepository())
     private lateinit var gameTheme: Theme
+    private lateinit var popUpAnimation: PopUpAnimation
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,10 +82,12 @@ class SmallGameFragment : Fragment() {
     private fun setUITheme(theme: Int) {
 
         gameTheme = getGameTheme(theme)
+        popUpAnimation = PopUpAnimation(binding.popUpAnimationView)
 
         binding.bestLl.setBackgroundResource(gameTheme.scoreBg)
         binding.scoreLl.setBackgroundResource(gameTheme.scoreBg)
         binding.shareImg.setBackgroundResource(gameTheme.scoreBg)
+        binding.hammerGame.setBackgroundResource(gameTheme.scoreBg)
         binding.undoBtn.setBackgroundResource(gameTheme.scoreBg)
         binding.restartGame.setBackgroundResource(gameTheme.scoreBg)
         binding.mainGameField.setBackgroundResource(gameTheme.boardDrawable)
@@ -91,8 +95,9 @@ class SmallGameFragment : Fragment() {
 
     fun changeState(matrix: Array<Array<Int>>, animatedMatrix: Array<BooleanArray>) {
 
-        binding.scoreGame.text = presenter.getScore().toString()
-        binding.recordGame.text = presenter.getRecord().toString()
+        animateValues(presenter.getScore(), binding.scoreGame, 500)
+        animateValues(presenter.getRecord(), binding.recordGame, 500)
+        animateValues(presenter.getMoves(), binding.movesGame, 500)
 
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
@@ -105,32 +110,23 @@ class SmallGameFragment : Fragment() {
                     tile.textSize = 38f
                 }
 
-                when (value) {
-                    2, 4, 64 -> {
-                        tile.setTextColor(
-                            resources.getColor(
-                                gameTheme.textColor24,
-                                requireActivity().theme
-                            )
-                        )
-                    }
-
-                    else -> {
-                        tile.setTextColor(
-                            resources.getColor(
-                                gameTheme.textColorElse,
-                                requireActivity().theme
-                            )
-                        )
-                    }
-                }
-
+                tile.setTextColor(
+                    resources.getColor(
+                        gameTheme.textColorElse,
+                        requireActivity().theme
+                    )
+                )
 
                 tile.background = getBgDrawable(value)
 
+                if (value >= 2048) {
+                    if (animatedMatrix[i][j]) {
+                        popUpAnimation.openPopUp(R.raw.winner_anim)
+                    }
+                }
                 if (value == 0) tile.text = ""
                 else {
-                    if (animatedMatrix[i][j]) CollapseAnimation.animateTextView(tile)
+                    if (animatedMatrix[i][j]) Animation.animateTextView(tile)
                     tile.text = matrix[i][j].toString()
                 }
             }
@@ -187,7 +183,7 @@ class SmallGameFragment : Fragment() {
             GAME_OVER -> {
                 dialog.setContentView(dialogBinding.root)
                 dialogBinding.dialogDescription.text =
-                    resources.getString(R.string.tv_win_dialog, presenter.getScore().toString())
+                    resources.getString(R.string.tv_win_dialog, presenter.getMoves().toString())
                 dialogBinding.negativeButton.setOnClickListener {
                     dialog.dismiss()
                 }
@@ -222,14 +218,17 @@ class SmallGameFragment : Fragment() {
     private fun loadViews() {
         binding.restartGame.setOnClickListener {
             if (presenter.getScore() != 0)
-                showDialog(Constants.RESTART)
+                showDialog(RESTART)
             else
                 presenter.restart()
         }
 
         binding.undoBtn.setOnClickListener { presenter.undoBoard() }
         binding.shareImg.setOnClickListener { shareGameBoardImage() }
-
+        binding.hammerGame.setOnClickListener {
+            if (presenter.useHammer())
+                popUpAnimation.openPopUp(R.raw.hammer_anim)
+        }
         val mainGameField = binding.mainGameField
         for (i in 0 until mainGameField.childCount) {
             val childContainer = mainGameField.getChildAt(i) as LinearLayout

@@ -6,6 +6,7 @@ class SmallGameRepository {
     private var matrix = LocalData.getSmallMatrix()
     private var score = LocalData.getSmallScore()
     private var record = LocalData.getSmallRecord()
+    private var moves = LocalData.getSmallMoves()
     private var initValue = 2
     private var oldMatrix = arrayOf(
         arrayOf(0, 0, 0),
@@ -17,6 +18,7 @@ class SmallGameRepository {
     private var undoMatrix = LocalData.getSmallMatrixUndo()
     private var oldScore = LocalData.getSmallScoreUndo()
     private var oldRecord = LocalData.getSmallRecordUndo()
+    private var oldMoves = LocalData.getSmallMovesUndo()
 
     init {
         reInitializeAnimation()
@@ -55,6 +57,8 @@ class SmallGameRepository {
     fun moveLeft() {
         oldScore = score
         oldRecord = record
+        oldMoves = moves
+        moves++
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
                 oldMatrix[i][j] = matrix[i][j]
@@ -96,6 +100,7 @@ class SmallGameRepository {
     fun moveRight() {
         oldScore = score
         oldRecord = record
+        moves++
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
                 oldMatrix[i][j] = matrix[i][j]
@@ -137,6 +142,8 @@ class SmallGameRepository {
     fun moveUp() {
         oldScore = score
         oldRecord = record
+        oldMoves = moves
+        moves++
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
                 oldMatrix[i][j] = matrix[i][j]
@@ -178,6 +185,8 @@ class SmallGameRepository {
     fun moveDown() {
         oldScore = score
         oldRecord = record
+        oldMoves = moves
+        moves++
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
                 oldMatrix[i][j] = matrix[i][j]
@@ -242,10 +251,12 @@ class SmallGameRepository {
             LocalData.setSmallRecord(record)
         LocalData.setSmallScore(score)
         LocalData.setSmallMatrix(matrix)
+        LocalData.setSmallMoves(moves)
 
         LocalData.setSmallMatrixUndo(undoMatrix)
         LocalData.setSmallScoreUndo(oldScore)
         LocalData.setSmallRecordUndo(oldRecord)
+        LocalData.setSmallMovesUndo(oldMoves)
     }
 
     fun restart() {
@@ -260,6 +271,8 @@ class SmallGameRepository {
         copyToUndoMatrix()
         oldScore = 0
         oldRecord = record
+        moves = 0
+        oldMoves = 0
     }
 
     fun undoBoard() {
@@ -270,6 +283,7 @@ class SmallGameRepository {
         }
         score = oldScore
         record = oldRecord
+        moves = oldMoves
     }
 
     private fun copyFromOldMatrix() {
@@ -293,11 +307,43 @@ class SmallGameRepository {
 
     }
 
-    fun setTheme(theme: Int) {
-        LocalData.setTheme(theme)
-    }
-
     fun getTheme(): Int {
         return LocalData.getTheme()
+    }
+
+    fun getMoves(): Int {
+        return moves
+    }
+
+    fun useHammer(): Boolean {
+        val elements = ArrayList<Pair<Int, Int>>()
+        for (i in matrix.indices) {
+            for (j in 0 until matrix[i].size) {
+                if (matrix[i][j] == 2 ||
+                    matrix[i][j] == 4 ||
+                    matrix[i][j] == 8 ||
+                    matrix[i][j] == 16 ||
+                    matrix[i][j] == 32 ||
+                    matrix[i][j] == 64
+                ) elements.add(
+                    Pair(i, j)
+                )
+            }
+        }
+        elements.shuffle()
+
+        if (elements.size < 3) return false
+
+        for (i in matrix.indices) {
+            for (j in 0 until matrix[i].size) {
+                oldMatrix[i][j] = matrix[i][j]
+            }
+        }
+
+        val element1 = elements[0]
+        matrix[element1.first][element1.second] = 0
+
+        copyFromOldMatrix()
+        return true
     }
 }

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/splash_screen_white" />
-    <item
-        android:width="350sp"
-        android:height="350dp"
-        android:drawable="@drawable/app_icon"
-        android:gravity="center" />
-</layer-list>

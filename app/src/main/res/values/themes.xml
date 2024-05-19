@@ -7,10 +7,6 @@
         <item name="colorAccent">@color/black</item>
     </style>
 
-    <style name="Theme.SplashScreen" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="android:windowBackground">@drawable/splash_screen</item>
-    </style>
-
     <style name="PlayButton">
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">match_parent</item>

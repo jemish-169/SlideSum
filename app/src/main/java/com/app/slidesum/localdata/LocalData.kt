@@ -3,17 +3,23 @@ package com.app.slidesum.localdata
 import android.content.Context
 import android.content.SharedPreferences
 import com.app.slidesum.utils.Constants
+import com.app.slidesum.utils.Constants.Companion.BIG_MOVES
 import com.app.slidesum.utils.Constants.Companion.BIG_RECORD
 import com.app.slidesum.utils.Constants.Companion.BIG_SCORE
+import com.app.slidesum.utils.Constants.Companion.BIG_UNDO_MOVES
 import com.app.slidesum.utils.Constants.Companion.BIG_UNDO_RECORD
 import com.app.slidesum.utils.Constants.Companion.BIG_UNDO_SCORE
+import com.app.slidesum.utils.Constants.Companion.MOVES
 import com.app.slidesum.utils.Constants.Companion.RECORD
 import com.app.slidesum.utils.Constants.Companion.SCORE
+import com.app.slidesum.utils.Constants.Companion.SMALL_MOVES
 import com.app.slidesum.utils.Constants.Companion.SMALL_RECORD
 import com.app.slidesum.utils.Constants.Companion.SMALL_SCORE
+import com.app.slidesum.utils.Constants.Companion.SMALL_UNDO_MOVES
 import com.app.slidesum.utils.Constants.Companion.SMALL_UNDO_RECORD
 import com.app.slidesum.utils.Constants.Companion.SMALL_UNDO_SCORE
 import com.app.slidesum.utils.Constants.Companion.THEME
+import com.app.slidesum.utils.Constants.Companion.UNDO_MOVES
 import com.app.slidesum.utils.Constants.Companion.UNDO_RECORD
 import com.app.slidesum.utils.Constants.Companion.UNDO_SCORE
 import com.app.slidesum.utils.Constants.Companion.bigMatrixLocation
@@ -128,6 +134,21 @@ class LocalData {
             sharedPref.edit().putInt(UNDO_RECORD, recordUndo).apply()
         }
 
+        fun getMoves(): Int {
+            return sharedPref.getInt(MOVES, 0)
+        }
+        fun setMoves(moves: Int) {
+            sharedPref.edit().putInt(MOVES, moves).apply()
+        }
+
+        fun getMovesUndo(): Int {
+            return sharedPref.getInt(UNDO_MOVES, 0)
+        }
+
+        fun setMovesUndo(oldMoves: Int) {
+            sharedPref.edit().putInt(UNDO_MOVES, oldMoves).apply()
+        }
+
         //----------------------------//
 
 
@@ -209,6 +230,22 @@ class LocalData {
 
         fun setSmallRecordUndo(recordUndo: Int) {
             sharedPref.edit().putInt(SMALL_UNDO_RECORD, recordUndo).apply()
+        }
+
+        fun getSmallMoves(): Int {
+            return sharedPref.getInt(SMALL_MOVES, 0)
+        }
+
+        fun getSmallMovesUndo(): Int {
+            return sharedPref.getInt(SMALL_UNDO_MOVES, 0)
+        }
+
+        fun setSmallMoves(moves: Int) {
+            sharedPref.edit().putInt(SMALL_MOVES, moves).apply()
+        }
+
+        fun setSmallMovesUndo(oldMoves: Int) {
+            sharedPref.edit().putInt(SMALL_UNDO_MOVES, oldMoves).apply()
         }
 
         //-------------------------------------//
@@ -296,6 +333,22 @@ class LocalData {
 
         fun setBigRecordUndo(recordUndo: Int) {
             sharedPref.edit().putInt(BIG_UNDO_RECORD, recordUndo).apply()
+        }
+
+        fun getBigMoves(): Int {
+            return sharedPref.getInt(BIG_MOVES, 0)
+        }
+
+        fun getBigMovesUndo(): Int {
+            return sharedPref.getInt(BIG_UNDO_MOVES, 0)
+        }
+
+        fun setBigMoves(moves: Int) {
+            sharedPref.edit().putInt(BIG_MOVES, moves).apply()
+        }
+
+        fun setBigMovesUndo(oldMoves: Int) {
+            sharedPref.edit().putInt(BIG_UNDO_MOVES, oldMoves).apply()
         }
 
         //-------------------------------------//

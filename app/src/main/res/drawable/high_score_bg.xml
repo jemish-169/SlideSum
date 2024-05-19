@@ -4,18 +4,16 @@
 
     <item android:id="@+id/background">
         <shape android:shape="rectangle">
-            <solid android:color="@color/glass_bg_color_0" />
-            <corners android:radius="10dp" />
+            <solid android:color="@color/light_red" />
+            <corners android:radius="5dp" />
         </shape>
     </item>
 
     <item
-        android:bottom="5dp"
-        android:right="5dp">
+        android:bottom="3dp">
         <shape android:shape="rectangle">
-            <solid android:color="#34FFFFFF" />
-            <corners
-                android:radius="10dp" />
+            <solid android:color="#6BFFFFFF" />
+            <corners android:radius="5dp" />
         </shape>
     </item>
 

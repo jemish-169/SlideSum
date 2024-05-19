@@ -57,4 +57,8 @@ dependencies {
     //viewPager with indicator
     implementation(libs.dotsindicator)
 
+    //lottie animation
+    implementation(libs.lottie)
+
+
 }

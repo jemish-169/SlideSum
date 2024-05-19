@@ -4,8 +4,8 @@
 
     <item android:id="@+id/background">
         <shape android:shape="rectangle">
-            <solid android:color="@color/glass_bg_color_board" />
-            <corners android:radius="8dp" />
+            <solid android:color="@color/bubble_bg_color_board" />
+            <corners android:radius="10dp" />
         </shape>
     </item>
 

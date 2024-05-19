@@ -100,4 +100,16 @@ class BigGamePresenter(
     fun getTheme(): Int {
         return repository.getTheme()
     }
+
+    fun getMoves(): Int {
+        return repository.getMoves()
+    }
+
+    fun useHammer(): Boolean {
+        if (repository.useHammer()) {
+            view.changeState(repository.getMatrix(), repository.animatedMatrix)
+            return true
+        }
+        return false
+    }
 }

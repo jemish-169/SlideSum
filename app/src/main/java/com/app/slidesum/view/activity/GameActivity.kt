@@ -13,7 +13,6 @@ class GameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGameBinding.inflate(layoutInflater)
-        setTheme(R.style.Theme_SlideSum)
         LocalData.getInstance(this)
         setContentView(binding.root)
     }
