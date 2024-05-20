@@ -14,9 +14,6 @@
             android:id="@+id/action_homeFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_themeFragment"
-            app:destination="@id/themeFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_smallGameFragment"
             app:destination="@id/smallGameFragment" />
         <action
@@ -25,19 +22,15 @@
         <action
             android:id="@+id/action_homeFragment_to_settingFragment"
             app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_themeFragment"
+            app:destination="@id/themeFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
         android:name="com.app.slidesum.view.fragment.GameFragment"
         android:label="fragment_game"
-        tools:layout="@layout/fragment_game" >
-        <action
-            android:id="@+id/action_gameFragment_to_settingFragment"
-            app:destination="@id/settingFragment" />
-        <action
-            android:id="@+id/action_gameFragment_to_themeFragment"
-            app:destination="@id/themeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_game" />
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.app.slidesum.view.fragment.SettingFragment"
@@ -56,24 +49,10 @@
         android:id="@+id/smallGameFragment"
         android:name="com.app.slidesum.view.fragment.SmallGameFragment"
         android:label="fragment_small_game"
-        tools:layout="@layout/fragment_small_game" >
-        <action
-            android:id="@+id/action_smallGameFragment_to_themeFragment"
-            app:destination="@id/themeFragment" />
-        <action
-            android:id="@+id/action_smallGameFragment_to_settingFragment"
-            app:destination="@id/settingFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_small_game" />
     <fragment
         android:id="@+id/big_Game_Fragment"
         android:name="com.app.slidesum.view.fragment.BigGameFragment"
         android:label="fragment_big__game_"
-        tools:layout="@layout/fragment_big_game" >
-        <action
-            android:id="@+id/action_big_Game_Fragment_to_settingFragment"
-            app:destination="@id/settingFragment" />
-        <action
-            android:id="@+id/action_big_Game_Fragment_to_themeFragment"
-            app:destination="@id/themeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_big_game" />
 </navigation>

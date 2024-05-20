@@ -13,17 +13,17 @@ import com.app.slidesum.databinding.ItemViewPagerBinding
 class ViewPagerAdapter(private val context: Context, forWhat: Int) : PagerAdapter() {
     private var themeImg = arrayOf(
         R.drawable.glass, // glass_theme
-        R.drawable.pastel, // pastel_theme
+        R.drawable.bubbles,  // bubble_theme
         R.drawable.pink, // pink_theme
         R.drawable.ocean,  // ocean_border_theme
-        R.drawable.bubbles,  // bubble_theme
+        R.drawable.pastel, // pastel_theme
     )
     private var themeNames = arrayOf(
         context.getString(R.string.glass_theme),
-        context.getString(R.string.pastel_color),
+        context.getString(R.string.bubble_theme),
         context.getString(R.string.pink_monochrome),
         context.getString(R.string.border_blue_ocean),
-        context.getString(R.string.bubble_theme),
+        context.getString(R.string.pastel_color),
     )
     private var gameModeNames = arrayOf(
         context.getString(R.string.small_3x3), // small

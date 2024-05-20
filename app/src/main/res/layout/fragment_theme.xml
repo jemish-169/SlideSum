@@ -5,14 +5,54 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
+    <LinearLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:foreground="?attr/selectableItemBackground"
+            android:paddingHorizontal="@dimen/share_tv_text_size18"
+            android:src="@drawable/outline_arrow_back_ios_new_24" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-smallcaps"
+            android:gravity="center_vertical"
+            android:text="@string/theme"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dialog_desc_text_size_22"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar" />
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/game_view_pager"
         android:layout_width="match_parent"
         android:layout_height="@dimen/view_pager_dimen_350"
-        android:layout_marginTop="@dimen/image_margin_top_70"
+        android:layout_marginTop="@dimen/dialog_title_text_size_30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/app_bar" />
 
     <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
         android:id="@+id/dot_indicator"
@@ -33,13 +73,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-smallcaps"
+        android:foreground="?attr/selectableItemBackground"
         android:paddingHorizontal="@dimen/dialog_button_padding_horizontal_40"
         android:paddingVertical="@dimen/dialog_button_padding_vertical_20"
         android:text="@string/set_theme"
-        android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="@dimen/dialog_desc_text_size_22"
-        android:textStyle="bold"
         app:cornerRadius="@dimen/dialog_corner_radius_10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

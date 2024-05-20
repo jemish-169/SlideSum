@@ -1,6 +1,5 @@
 package com.app.slidesum.view.fragment
 
-import android.animation.ValueAnimator
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.LayerDrawable
@@ -8,7 +7,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -16,7 +14,6 @@ import com.app.slidesum.R
 import com.app.slidesum.adapters.ViewPagerAdapter
 import com.app.slidesum.databinding.FragmentHomeBinding
 import com.app.slidesum.localdata.LocalData
-import com.app.slidesum.utils.Animation
 import com.app.slidesum.utils.Animation.animateValues
 
 
@@ -39,9 +36,9 @@ class HomeFragment : Fragment() {
         binding.mediumHighScoreLl.background = getDrawable(R.color.light_yellow)
         binding.bigHighScoreLl.background = getDrawable(R.color.light_green)
 
-        animateValues(LocalData.getSmallRecord(), binding.smallHighScore,1000)
-        animateValues(LocalData.getRecord(), binding.mediumHighScore,1000)
-        animateValues(LocalData.getBigRecord(), binding.bigHighScore,1000)
+        animateValues(LocalData.getSmallRecord(), binding.smallHighScore, 1000)
+        animateValues(LocalData.getRecord(), binding.mediumHighScore, 1000)
+        animateValues(LocalData.getBigRecord(), binding.bigHighScore, 1000)
 
     }
 

@@ -50,6 +50,7 @@
                 android:layout_marginHorizontal="@dimen/dialog_button_margin_20"
                 android:layout_weight="1"
                 android:text="@string/play"
+                android:foreground="?attr/selectableItemBackground"
                 android:textColor="@color/splash_screen_white"
                 android:textStyle="bold"
                 app:cornerRadius="@dimen/button_corner_radius_6" />
@@ -58,6 +59,7 @@
                 android:id="@+id/positive_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
                 android:layout_marginHorizontal="@dimen/dialog_button_margin_20"
                 android:layout_weight="1"
                 android:text="@string/restart"

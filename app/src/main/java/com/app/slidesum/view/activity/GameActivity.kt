@@ -2,7 +2,6 @@ package com.app.slidesum.view.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.app.slidesum.R
 import com.app.slidesum.databinding.ActivityGameBinding
 import com.app.slidesum.localdata.LocalData
 

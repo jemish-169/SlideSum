@@ -30,4 +30,5 @@
     <dimen name="theme_button_radius_6">6dp</dimen>
     <dimen name="high_score_14sp">15sp</dimen>
     <dimen name="theme_item_name_24sp">24sp</dimen>
+    <dimen name="share_tv_text_size18">18sp</dimen>
 </resources>

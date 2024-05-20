@@ -20,7 +20,7 @@ class BigGameRepository {
     private var undoMatrix = LocalData.getBigMatrixUndo()
     private var oldScore = LocalData.getBigScoreUndo()
     private var oldRecord = LocalData.getBigRecordUndo()
-    private var oldMoves= LocalData.getBigMovesUndo()
+    private var oldMoves = LocalData.getBigMovesUndo()
 
     init {
         reInitializeAnimation()
@@ -320,7 +320,7 @@ class BigGameRepository {
         return moves
     }
 
-    fun useHammer() :Boolean{
+    fun useHammer(): Boolean {
         val elements = ArrayList<Pair<Int, Int>>()
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
@@ -337,7 +337,7 @@ class BigGameRepository {
         }
         elements.shuffle()
 
-        if(elements.size < 5) return false
+        if (elements.size < 5) return false
 
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {

@@ -28,6 +28,9 @@ class ThemeFragment : Fragment() {
             localData.setTheme(binding.gameViewPager.currentItem + 1)
             findNavController().navigateUp()
         }
+        binding.backButton.setOnClickListener {
+            findNavController().navigateUp()
+        }
         val adapter = ViewPagerAdapter(requireContext(), 1)
         binding.gameViewPager.adapter = adapter
         binding.dotIndicator.attachTo(binding.gameViewPager)

@@ -137,6 +137,7 @@ class LocalData {
         fun getMoves(): Int {
             return sharedPref.getInt(MOVES, 0)
         }
+
         fun setMoves(moves: Int) {
             sharedPref.edit().putInt(MOVES, moves).apply()
         }

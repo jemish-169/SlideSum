@@ -49,23 +49,23 @@ class Constants {
             return when (theme) {
                 2 -> {
                     Theme(
-                        textColorElse = R.color.pastel_text_color_else,
-                        scoreBg = R.drawable.pastel_score_bg,
-                        boardDrawable = R.drawable.pastel_color_board_bg,
-                        tileDrawable = R.drawable.pastel_tile_color,
-                        color0 = R.color.pastel_bg_color_0,
-                        color2 = R.color.pastel_bg_color_2,
-                        color4 = R.color.pastel_bg_color_4,
-                        color8 = R.color.pastel_bg_color_8,
-                        color16 = R.color.pastel_bg_color_16,
-                        color32 = R.color.pastel_bg_color_32,
-                        color64 = R.color.pastel_bg_color_64,
-                        color128 = R.color.pastel_bg_color_128,
-                        color256 = R.color.pastel_bg_color_256,
-                        color512 = R.color.pastel_bg_color_512,
-                        color1024 = R.color.pastel_bg_color_1024,
-                        color2048 = R.color.pastel_bg_color_2048,
-                        colorElse = R.color.pastel_bg_color_else
+                        textColorElse = R.color.bubble_text_color_else,
+                        scoreBg = R.drawable.bubble_score_bg,
+                        boardDrawable = R.drawable.bubble_color_board_bg,
+                        tileDrawable = R.drawable.bubble_tile_color,
+                        color0 = R.color.bubble_bg_color_0,
+                        color2 = R.color.bubble_bg_color_2,
+                        color4 = R.color.bubble_bg_color_4,
+                        color8 = R.color.bubble_bg_color_8,
+                        color16 = R.color.bubble_bg_color_16,
+                        color32 = R.color.bubble_bg_color_32,
+                        color64 = R.color.bubble_bg_color_64,
+                        color128 = R.color.bubble_bg_color_128,
+                        color256 = R.color.bubble_bg_color_256,
+                        color512 = R.color.bubble_bg_color_512,
+                        color1024 = R.color.bubble_bg_color_1024,
+                        color2048 = R.color.bubble_bg_color_2048,
+                        colorElse = R.color.bubble_bg_color_else
                     )
                 }
 
@@ -115,23 +115,23 @@ class Constants {
 
                 5 -> {
                     Theme(
-                        textColorElse = R.color.bubble_text_color_else,
-                        scoreBg = R.drawable.bubble_score_bg,
-                        boardDrawable = R.drawable.bubble_color_board_bg,
-                        tileDrawable = R.drawable.bubble_tile_color,
-                        color0 = R.color.bubble_bg_color_0,
-                        color2 = R.color.bubble_bg_color_2,
-                        color4 = R.color.bubble_bg_color_4,
-                        color8 = R.color.bubble_bg_color_8,
-                        color16 = R.color.bubble_bg_color_16,
-                        color32 = R.color.bubble_bg_color_32,
-                        color64 = R.color.bubble_bg_color_64,
-                        color128 = R.color.bubble_bg_color_128,
-                        color256 = R.color.bubble_bg_color_256,
-                        color512 = R.color.bubble_bg_color_512,
-                        color1024 = R.color.bubble_bg_color_1024,
-                        color2048 = R.color.bubble_bg_color_2048,
-                        colorElse = R.color.bubble_bg_color_else
+                        textColorElse = R.color.pastel_text_color_else,
+                        scoreBg = R.drawable.pastel_score_bg,
+                        boardDrawable = R.drawable.pastel_color_board_bg,
+                        tileDrawable = R.drawable.pastel_tile_color,
+                        color0 = R.color.pastel_bg_color_0,
+                        color2 = R.color.pastel_bg_color_2,
+                        color4 = R.color.pastel_bg_color_4,
+                        color8 = R.color.pastel_bg_color_8,
+                        color16 = R.color.pastel_bg_color_16,
+                        color32 = R.color.pastel_bg_color_32,
+                        color64 = R.color.pastel_bg_color_64,
+                        color128 = R.color.pastel_bg_color_128,
+                        color256 = R.color.pastel_bg_color_256,
+                        color512 = R.color.pastel_bg_color_512,
+                        color1024 = R.color.pastel_bg_color_1024,
+                        color2048 = R.color.pastel_bg_color_2048,
+                        colorElse = R.color.pastel_bg_color_else
                     )
                 }
 
