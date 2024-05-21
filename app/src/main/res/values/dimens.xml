@@ -31,4 +31,9 @@
     <dimen name="high_score_14sp">15sp</dimen>
     <dimen name="theme_item_name_24sp">24sp</dimen>
     <dimen name="share_tv_text_size18">18sp</dimen>
+    <dimen name="desc_text_size_20sp">20sp</dimen>
+    <dimen name="text_desc_padding_4">4dp</dimen>
+    <dimen name="text_desc_title_8">8dp</dimen>
+    <dimen name="view_height_1">1dp</dimen>
+    <dimen name="hammer_icon_55">55dp</dimen>
 </resources>

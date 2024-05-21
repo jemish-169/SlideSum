@@ -9,22 +9,32 @@
         android:id="@+id/homeFragment"
         android:name="com.app.slidesum.view.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
+            app:destination="@id/gameFragment"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:popEnterAnim="@anim/nav_slide_in_left" />
         <action
             android:id="@+id/action_homeFragment_to_smallGameFragment"
-            app:destination="@id/smallGameFragment" />
+            app:destination="@id/smallGameFragment"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:popEnterAnim="@anim/nav_slide_in_left" />
         <action
             android:id="@+id/action_homeFragment_to_big_Game_Fragment"
-            app:destination="@id/big_Game_Fragment" />
+            app:destination="@id/big_Game_Fragment"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:popEnterAnim="@anim/nav_slide_in_left" />
         <action
             android:id="@+id/action_homeFragment_to_settingFragment"
-            app:destination="@id/settingFragment" />
+            app:destination="@id/settingFragment"
+            app:enterAnim="@anim/nav_slide_in_top"
+            app:popEnterAnim="@anim/nav_slide_in_bottom" />
         <action
             android:id="@+id/action_homeFragment_to_themeFragment"
-            app:destination="@id/themeFragment" />
+            app:destination="@id/themeFragment"
+            app:enterAnim="@anim/nav_slide_in_top"
+            app:popEnterAnim="@anim/nav_slide_in_bottom" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
@@ -35,10 +45,17 @@
         android:id="@+id/settingFragment"
         android:name="com.app.slidesum.view.fragment.SettingFragment"
         android:label="fragment_setting"
-        tools:layout="@layout/fragment_setting" >
+        tools:layout="@layout/fragment_setting">
         <action
             android:id="@+id/action_settingFragment_to_themeFragment"
-            app:destination="@id/themeFragment" />
+            app:destination="@id/themeFragment"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:popEnterAnim="@anim/nav_slide_in_left" />
+        <action
+            android:id="@+id/action_settingFragment_to_guideFragment"
+            app:destination="@id/guideFragment"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:popEnterAnim="@anim/nav_slide_in_left"/>
     </fragment>
     <fragment
         android:id="@+id/themeFragment"
@@ -55,4 +72,9 @@
         android:name="com.app.slidesum.view.fragment.BigGameFragment"
         android:label="fragment_big__game_"
         tools:layout="@layout/fragment_big_game" />
+    <fragment
+        android:id="@+id/guideFragment"
+        android:name="com.app.slidesum.view.fragment.GuideFragment"
+        android:label="fragment_guide"
+        tools:layout="@layout/fragment_guide" />
 </navigation>
