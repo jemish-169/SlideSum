@@ -318,7 +318,7 @@ class GameRepository {
         return moves
     }
 
-    fun useHammer() :Boolean{
+    fun useHammer(): Boolean {
         val elements = ArrayList<Pair<Int, Int>>()
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {
@@ -335,7 +335,7 @@ class GameRepository {
         }
         elements.shuffle()
 
-        if(elements.size < 4) return false
+        if (elements.size < 4) return false
 
         for (i in matrix.indices) {
             for (j in 0 until matrix[i].size) {

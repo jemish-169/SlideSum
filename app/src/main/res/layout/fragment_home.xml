@@ -1,164 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="@dimen/dialog_margin_10"
-        android:layout_marginTop="@dimen/dialog_margin_10"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:id="@+id/small_high_score_ll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/high_score_bg"
-            android:orientation="horizontal"
-            android:paddingHorizontal="@dimen/dialog_margin_10"
-            android:paddingVertical="@dimen/game_board_padding_5">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-smallcaps"
-                android:gravity="center"
-                android:text="@string/small_3x3"
-                android:textColor="@color/dark_red"
-                android:textSize="@dimen/high_score_14sp"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="5dp"
-                android:layout_height="2dp"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="@dimen/dialog_margin_10"
-                android:background="@color/dark_red" />
-
-            <TextView
-                android:id="@+id/small_high_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-smallcaps"
-                android:gravity="center"
-                android:textColor="@color/dark_red"
-                android:textSize="@dimen/theme_button_text_size_16"
-                android:textStyle="bold"
-                tools:text="1500" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/medium_high_score_ll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/high_score_bg"
-            android:orientation="horizontal"
-            android:paddingHorizontal="@dimen/dialog_margin_10"
-            android:paddingVertical="@dimen/game_board_padding_5">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-smallcaps"
-                android:gravity="center"
-                android:text="@string/classic_4x4"
-                android:textColor="@color/dark_yellow"
-                android:textSize="@dimen/high_score_14sp"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="5dp"
-                android:layout_height="2dp"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="@dimen/dialog_margin_10"
-                android:background="@color/dark_yellow" />
-
-            <TextView
-                android:id="@+id/medium_high_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-smallcaps"
-                android:gravity="center"
-                android:textColor="@color/dark_yellow"
-                android:textSize="@dimen/theme_button_text_size_16"
-                android:textStyle="bold"
-                tools:text="1500" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/big_high_score_ll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/high_score_bg"
-            android:orientation="horizontal"
-            android:paddingHorizontal="@dimen/dialog_margin_10"
-            android:paddingVertical="@dimen/game_board_padding_5">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-smallcaps"
-                android:gravity="center"
-                android:text="@string/big_5x5"
-                android:textColor="@color/dark_green"
-                android:textSize="@dimen/high_score_14sp"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="5dp"
-                android:layout_height="2dp"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="@dimen/dialog_margin_10"
-                android:background="@color/dark_green" />
-
-            <TextView
-                android:id="@+id/big_high_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-smallcaps"
-                android:gravity="center"
-                android:textColor="@color/dark_green"
-                android:textSize="@dimen/theme_button_text_size_16"
-                android:textStyle="bold"
-                tools:text="1500" />
-
-        </LinearLayout>
-
-
-    </LinearLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/game_view_pager"
         android:layout_width="match_parent"
         android:layout_height="@dimen/view_pager_dimen_350"
-        android:layout_marginTop="@dimen/dialog_title_text_size_30"
+        app:layout_constraintBottom_toTopOf="@+id/start_game"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
         android:id="@+id/dot_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dialog_margin_10"
+        android:layout_marginBottom="@dimen/dialog_margin_10"
         app:dotsColor="@android:color/darker_gray"
         app:dotsSize="@dimen/game_board_margin_16"
         app:dotsSpacing="@dimen/button_corner_radius_6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/game_view_pager"
+        app:layout_constraintStart_toStartOf="@+id/game_view_pager"
         app:layout_constraintTop_toBottomOf="@+id/game_view_pager"
         app:progressMode="true"
         app:selectedDotColor="@color/black" />
@@ -178,16 +45,16 @@
         app:cornerRadius="@dimen/dialog_corner_radius_10"
         app:layout_constraintBottom_toTopOf="@+id/theme_game"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dot_indicator" />
+        app:layout_constraintTop_toBottomOf="@+id/game_view_pager" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/settings_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="@dimen/dialog_margin_10"
         android:layout_marginEnd="@dimen/dialog_margin_10"
+        android:layout_marginBottom="@dimen/dialog_button_margin_20"
         android:fontFamily="sans-serif-smallcaps"
         android:foreground="?attr/selectableItemBackground"
         android:paddingHorizontal="@dimen/theme_button_padding_20"
@@ -196,14 +63,16 @@
         android:textColor="@color/white"
         android:textSize="@dimen/share_tv_text_size18"
         app:cornerRadius="@dimen/theme_button_radius_6"
-        app:icon="@drawable/outline_settings_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/theme_game" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/theme_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dialog_button_margin_20"
         android:layout_marginBottom="@dimen/dialog_button_margin_20"
         android:fontFamily="sans-serif-smallcaps"
         android:foreground="?attr/selectableItemBackground"
@@ -214,6 +83,8 @@
         android:textSize="@dimen/share_tv_text_size18"
         app:cornerRadius="@dimen/theme_button_radius_6"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/settings_game"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

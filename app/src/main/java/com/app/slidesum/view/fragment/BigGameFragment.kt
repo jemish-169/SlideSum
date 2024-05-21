@@ -226,7 +226,9 @@ class BigGameFragment : Fragment() {
             if (presenter.useHammer())
                 popUpAnimation.openPopUp(R.raw.hammer_anim)
         }
-
+        binding.backButton.setOnClickListener {
+            findNavController().navigateUp()
+        }
         val mainGameField = binding.mainGameField
         for (i in 0 until mainGameField.childCount) {
             val childContainer = mainGameField.getChildAt(i) as LinearLayout

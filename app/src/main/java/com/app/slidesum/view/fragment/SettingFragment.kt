@@ -28,10 +28,10 @@ class SettingFragment : Fragment() {
     private fun loadViews() {
         val themeNames = arrayOf(
             getString(R.string.glass_theme),
-            getString(R.string.bubble_theme),
-            getString(R.string.pink_monochrome),
             getString(R.string.border_blue_ocean),
-            getString(R.string.pastel_color)
+            getString(R.string.pastel_color),
+            getString(R.string.pink_monochrome),
+            getString(R.string.bubble_theme)
         )
         var versionName = ""
         try {
@@ -48,6 +48,9 @@ class SettingFragment : Fragment() {
         }
         binding.backButton.setOnClickListener {
             findNavController().navigateUp()
+        }
+        binding.settingsLlGuide.setOnClickListener {
+            findNavController().navigate(R.id.action_settingFragment_to_guideFragment)
         }
         binding.settingsLlShareApp.setOnClickListener {
             val appName = getString(R.string.app_name)

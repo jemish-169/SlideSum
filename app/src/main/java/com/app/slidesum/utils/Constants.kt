@@ -47,7 +47,7 @@ class Constants {
 
         fun getGameTheme(theme: Int): Theme {
             return when (theme) {
-                2 -> {
+                5 -> {
                     Theme(
                         textColorElse = R.color.bubble_text_color_else,
                         scoreBg = R.drawable.bubble_score_bg,
@@ -69,7 +69,7 @@ class Constants {
                     )
                 }
 
-                3 -> {
+                4 -> {
                     Theme(
                         textColorElse = R.color.pink_text_color_else,
                         scoreBg = R.drawable.pink_score_bg,
@@ -91,7 +91,7 @@ class Constants {
                     )
                 }
 
-                4 -> {
+                2 -> {
                     Theme(
                         textColorElse = R.color.border_text_color_else,
                         scoreBg = R.drawable.border_score_bg,
@@ -113,7 +113,7 @@ class Constants {
                     )
                 }
 
-                5 -> {
+                3 -> {
                     Theme(
                         textColorElse = R.color.pastel_text_color_else,
                         scoreBg = R.drawable.pastel_score_bg,

@@ -4,16 +4,6 @@
     <color name="white">#EFEFEF</color>
     <color name="splash_screen_white">#FEFEFE</color>
 
-    <!-- high score back ground -->
-    <color name="dark_red">#e03b2e</color>
-    <color name="light_red">#FFE3E2</color>
-
-    <color name="dark_yellow">#f4a811</color>
-    <color name="light_yellow">#FFF4D0</color>
-
-    <color name="dark_green">#2ca84e</color>
-    <color name="light_green">#DAFBE1</color>
-
     <!--    Game board color Theme 1-->
     <color name="def_score_color_pressed">#2787B1</color>
     <color name="def_score_color">#1A5975</color>
@@ -83,9 +73,9 @@
     <color name="bubble_score_color_pressed">#22953F</color>
     <color name="bubble_text_color_else">#000000</color>
     <color name="bubble_bg_color_board">#EFEFEF</color>
-    <color name="bubble_bg_color_0">#D4F6DC</color>
-    <color name="bubble_bg_color_2">#8AFDA7</color>
-    <color name="bubble_bg_color_4">#2dc653</color>
+    <color name="bubble_bg_color_0">#D9EADD</color>
+    <color name="bubble_bg_color_2">#B5F1C4</color>
+    <color name="bubble_bg_color_4">#63D880</color>
     <color name="bubble_bg_color_8">#A1FB51</color>
     <color name="bubble_bg_color_16">#dfff61</color>
     <color name="bubble_bg_color_32">#ffea62</color>
