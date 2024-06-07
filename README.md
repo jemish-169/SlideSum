@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-Play the 2048++ from Google Play: [https://play.google.com/store/apps/details?id=com.practice.gita](https://play.google.com/store/apps/details?id=com.app.slidesum)
+Play the 2048++ from Google Play: [https://play.google.com/store/apps/details?id=com.app.slidesum](https://play.google.com/store/apps/details?id=com.app.slidesum)
 
 
 ## 📸 Screenshots
